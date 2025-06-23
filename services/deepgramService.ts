@@ -39,8 +39,17 @@ const setState = (newState: DeepgramConnectionState, handlers: DeepgramServiceHa
 };
 
 export const startDeepgramConnection = async (handlers: DeepgramServiceHandlers) => {
+  if (!DEEPGRAM_API_KEY || DEEPGRAM_API_KEY === "YOUR_DEEPGRAM_API_KEY") {
+    const errorMsg = "Deepgram API Key is not set or is invalid. Please check your constants.ts file.";
+    setState(DeepgramConnectionState.ERROR, handlers);
+    handlers.onError(new Error(errorMsg));
+    console.error(errorMsg);
+    alert(errorMsg); // Also alert the user directly for immediate feedback
+    return;
+  }
+
   try {
-    const dgClient = getClient(handlers.onError as any); // Use onError for internal logging too
+    const dgClient = getClient();
     setState(DeepgramConnectionState.CONNECTING, handlers);
 
     microphone = await navigator.mediaDevices.getUserMedia({ audio: true });

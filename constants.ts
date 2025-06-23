@@ -4,7 +4,7 @@
 // in environments where setting process.env.API_KEY is challenging for client-side access.
 // For any production or shared deployment, YOU MUST configure API_KEY as a secure environment variable.
 // Do NOT commit your actual key to public repositories if you use this file for development.
-const PLACEHOLDER_GEMINI_API_KEY = "YOUR_GOOGLE_GEMINI_API_KEY_HERE";
+const PLACEHOLDER_GEMINI_API_KEY = "AIzaSyBu6dCYz1z-aQ8l5vLd1r55GHxc9-toecc";
 export const API_KEY = process.env.API_KEY || PLACEHOLDER_GEMINI_API_KEY;
 // --- END GOOGLE GEMINI API KEY ---
 
