@@ -9,9 +9,8 @@ let microphone: MediaStream | null = null;
 
 let currentConnectionState: DeepgramConnectionState = DeepgramConnectionState.IDLE;
 
-const getClient = (addDebugLogEntry: (type: DebugLogEntryType, title: string, data: any) => void) => {
+const getClient = () => {
   if (!DEEPGRAM_API_KEY) {
-    addDebugLogEntry(DebugLogEntryType.DEEPGRAM_ERROR, "Deepgram Initialization Failed", "DEEPGRAM_API_KEY is not set.");
     console.error("DEEPGRAM_API_KEY is not set.");
     throw new Error("DEEPGRAM_API_KEY is not set.");
   }
@@ -65,8 +64,7 @@ export const startDeepgramConnection = async (handlers: DeepgramServiceHandlers)
       punctuate: true,
       smart_format: true,
       interim_results: true,
-      utterance_end_ms: "1000", // Get an event when an utterance ends
-      listen_endpoint_version: "beta", // For UtteranceEnd
+      utterance_end_ms: "1000", // For utterance end events
       summarize: 'v2',
       detect_topics: 'v2',
       // intents: true, // Consider adding later

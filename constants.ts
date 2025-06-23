@@ -22,7 +22,7 @@ export const DEEPGRAM_API_KEY = process.env.DEEPGRAM_API_KEY || USER_PROVIDED_DE
 export const GEMINI_MODEL_TEXT = 'gemini-2.5-flash-preview-04-17';
 export const GEMINI_MODEL_IMAGE = 'imagen-3.0-generate-002';
 
-export const DEEPGRAM_MODEL = 'nova-2-general'; // Example Deepgram model
+export const DEEPGRAM_MODEL = 'nova-3'; // Updated to latest recommended model
 
 export const DEFAULT_TILE_WIDTH = 280; // pixels
 export const DEFAULT_TILE_HEIGHT = 180; // pixels
