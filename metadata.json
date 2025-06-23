@@ -1,0 +1,8 @@
+{
+  "name": "InspiraNote",
+  "description": "A dynamic brainstorming tool that captures ideas from voice input and visualizes them as interactive tiles on a digital mahjong board. Pin important ideas and download them for later.",
+  "requestFramePermissions": [
+    "microphone"
+  ],
+  "prompt": ""
+}
